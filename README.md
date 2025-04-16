@@ -1,4 +1,5 @@
 # tickeasy-frontend
 
-front* -> the front panels  
-back* -> the back panels
+# 前台首頁
+index.html
+index.css
