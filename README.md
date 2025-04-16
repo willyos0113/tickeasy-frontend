@@ -1,5 +1,5 @@
 # tickeasy-frontend
 
-# 前台首頁
-index.html
-index.css
+- 前台首頁
+  - index.html
+  - index.css
