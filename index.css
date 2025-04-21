@@ -23,7 +23,7 @@ body {
 nav {
   background-color: #ffffff;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-  position: fixed;
+  position: relative;
   width: 100%;
   z-index: 1000;
   margin: 0 auto;
@@ -285,10 +285,18 @@ footer {
   gap: 1rem;
 }
 
-/* 響應式設計 */
+/* RWD 響應式設計 */
 @media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
   .nav-links {
-    display: none;
+    flex-direction: column;
+  }
+
+  .hero {
+    padding: 8.5rem 1rem 4rem;
   }
 
   .hero h1 {
