@@ -1,0 +1,261 @@
+/* 重置及基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 0.3rem;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #374151;
+    background-color: #f9fafb;
+}
+
+/* 導覽列 nav 樣式 */
+nav {
+    background-color: #ffffff;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #ec4899;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #374151;
+}
+
+.cta-button {
+    background-color: #ec4899;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+/* 頁腳 footer 樣式 */
+footer {
+    background-color: #1f2937;
+    color: white;
+    padding: 4rem 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #9ca3af;
+    text-decoration: none;
+    line-height: 2;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+/* 必要時保留其他相關樣式 */
+
+/* 新增：主內容區塊樣式 */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* 活動導航區塊樣式 */
+.event-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.event-back a {
+    display: flex;
+    align-items: center;
+    color: #374151;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.arrow-back {
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.event-tabs {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.tab-link {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.tab-link:hover {
+    color: #111827;
+}
+
+.event-header {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.event-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.event-details {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: -2rem;
+    position: relative;
+    z-index: 10;
+    padding: 1.5rem;
+}
+
+.event-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.event-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.event-meta {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.event-meta div {
+    margin-bottom: 0.3rem;
+}
+
+.event-description {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.event-booking {
+    flex: 1;
+    min-width: 250px;
+    background-color: #f3f4f6;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-left: 1.5rem;
+}
+
+.booking-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.ticket-option {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.ticket-option:last-child {
+    margin-bottom: 1.5rem;
+}
+
+.ticket-price {
+    font-weight: bold;
+}
+
+.booking-button {
+    background-color: #ec4899;
+    color: white;
+    border: none;
+    padding: 0.8rem 0;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+
+/* RWD 響應式設計 */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+
+
+    .event-details {
+        flex-direction: column;
+    }
+
+    .event-booking {
+        margin-left: 0;
+        margin-top: 1.5rem;
+    }
+}

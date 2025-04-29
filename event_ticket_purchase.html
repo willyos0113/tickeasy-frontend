@@ -1,121 +1,14 @@
-<!DOCTYPE html>
 <html lang="zh-TW">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TickEasy - 探索精彩活動</title>
-    <style>
-        /* 重置及基本設定 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        hr {
-            border: none;
-            border-top: 1px solid #e5e7eb;
-            margin-top: 0.3rem;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #374151;
-            background-color: #f9fafb;
-        }
-
-        /* 導覽列 nav 樣式 */
-        nav {
-            background-color: #ffffff;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-            width: 100%;
-            z-index: 1000;
-            margin: 0 auto;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo a {
-            color: #ec4899;
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #374151;
-        }
-
-        .cta-button {
-            background-color: #ec4899;
-            color: white !important;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-        }
-
-        /* 頁腳 footer 樣式 */
-        footer {
-            background-color: #1f2937;
-            color: white;
-            padding: 4rem 1rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
-            color: #9ca3af;
-            text-decoration: none;
-            line-height: 2;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        /* RWD 響應式設計 */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-            }
-
-            .nav-links {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./event_ticket_purchase.css">
 </head>
 
 <body>
-    <!-- 導覽列 nav -->
+    <!-- 主導覽列 nav -->
     <nav>
         <div class="logo">
             <a href="/">TickEasy</a>
@@ -128,6 +21,55 @@
             <li><a href="#profile" class="cta-button">會員中心</a></li>
         </ul>
     </nav>
+
+    <!-- 主內容區塊 -->
+    <main class="main-content">
+        <!-- 活動導航區塊 -->
+        <div class="event-navigation">
+            <div class="event-back">
+                <a href="#"><span class="arrow-back">‹</span> 2024春季音樂節</a>
+            </div>
+            <div class="event-tabs">
+                <a href="#info" class="tab-link">活動資訊</a>
+                <a href="#price" class="tab-link">票價資訊</a>
+                <a href="#transfer" class="tab-link">轉票專區</a>
+                <a href="#discussion" class="tab-link">討論區</a>
+            </div>
+        </div>
+
+        <!-- 活動內容 -->
+        <section class="event-header">
+            <img src="/api/placeholder/1200/400" alt="2025春季音樂節" class="event-image">
+
+            <div class="event-details">
+                <div class="event-info">
+                    <h1 class="event-title">2025春季音樂節</h1>
+                    <div class="event-meta">
+                        <div><strong>活動日期：</strong>2025/03/15 18:30</div>
+                        <div><strong>地點：</strong>台北市音樂廳戶外廣場</div>
+                        <div><strong>主辦單位：</strong>春季音樂季籌備委員會</div>
+                    </div>
+                    <hr>
+                    <div class="event-description">
+                        <p>2025春季音樂節將帶來前所未有的聽覺盛宴，來自世界各地的音樂人共襄盛舉。</p>
+                    </div>
+                </div>
+
+                <div class="event-booking">
+                    <h3 class="booking-title">票券資訊</h3>
+                    <div class="ticket-option">
+                        <span>VIP票</span>
+                        <span class="ticket-price">NT$ 2,000</span>
+                    </div>
+                    <div class="ticket-option">
+                        <span>一般票</span>
+                        <span class="ticket-price">NT$ 1,500</span>
+                    </div>
+                    <a href="#book-now" class="booking-button">立即購票</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- 頁腳 footer -->
     <footer>
