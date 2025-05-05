@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="zh-TW">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TickEasy - 探索精彩活動</title>
+    <title>TickEasy - 轉票專區</title>
     <link rel="stylesheet" href="./ticket_exchange_area.css">
 </head>
 
@@ -37,7 +38,75 @@
             </div>
         </div>
 
-        
+        <!-- 轉票專區內容 -->
+        <div class="exchange-area">
+            <h1 class="exchange-title">轉票專區</h1>
+            
+            <!-- 發表轉票表單 -->
+            <div class="ticket-form">
+                <h2 class="form-title">發表轉票</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ticket-type">票種票區</label>
+                        <input type="text" id="ticket-type" class="form-control" placeholder="VIP票 Row A, Seat 12">
+                    </div>
+                    <div class="form-group">
+                        <label for="ticket-price">希望售價</label>
+                        <input type="text" id="ticket-price" class="form-control" placeholder="NT$">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ticket-description">補充說明（選填）</label>
+                    <textarea id="ticket-description" class="form-control" rows="3"></textarea>
+                </div>
+                <button class="submit-button">確認發佈</button>
+                <div style="clear: both;"></div>
+            </div>
+            
+            <!-- 轉票列表 -->
+            <div class="ticket-listing">
+                <div class="user-content">
+                    <div class="user-info">
+                        <div class="user-avatar"></div>
+                        <div>
+                            <div class="user-name">王大明</div>
+                            <div class="user-role">7 則發佈</div>
+                        </div>
+                    </div>
+                    <div class="ticket-comment">
+                        時間有衝突，只能把票讓出來，有興趣的請留言！
+                    </div>
+                </div>
+                <div class="ticket-info">
+                    <div class="ticket-label">售票中</div>
+                    <div class="ticket-detail">VIP票 Row A, Seat 12</div>
+                    <div class="ticket-detail">原價讓售</div>
+                    <a href="#" class="contact-button">聯絡他</a>
+                </div>
+            </div>
+            
+            <div class="ticket-listing">
+                <div class="user-content">
+                    <div class="user-info">
+                        <div class="user-avatar"></div>
+                        <div>
+                            <div class="user-name">李小華</div>
+                            <div class="user-role">5 則發佈</div>
+                        </div>
+                    </div>
+                    <div class="ticket-comment">
+                        很可惜臨時有事不能去，希望能轉票給有需要的人！
+                    </div>
+                </div>
+                <div class="ticket-info">
+                    <div class="ticket-label ticket-unavailable">已售出</div>
+                    <div class="ticket-detail">貴賓區 Row B, Seat 15</div>
+                    <div class="ticket-detail">VIP區 Row C, Seat 8</div>
+                    <a href="#" class="contact-button">聯絡他</a>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <!-- 頁腳 footer -->
     <footer>
