@@ -42,8 +42,8 @@ nav {
 
 .nav-links {
     display: flex;
-    list-style: none;
     gap: 2rem;
+    list-style: none;
 }
 
 .nav-links a {
@@ -392,8 +392,6 @@ footer {
         gap: 1rem;
         margin-top: 1rem;
     }
-
-
 
     .event-details {
         flex-direction: column;
