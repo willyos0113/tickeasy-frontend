@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="zh-TW">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TickEasy - 探索精彩活動</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./event_ticket_purchase.css">
 </head>
-
 <body>
     <!-- 主導覽列 nav -->
     <nav>
@@ -23,12 +22,22 @@
         </ul>
     </nav>
 
+    <!-- 麵包屑導航 - 這部分保持靜態 -->
+    <div class="breadcrumb-container">
+        <div class="breadcrumb">
+            <i class="fa fa-calendar-o breadcrumb-icon"></i>
+            <a href="/">首頁</a>
+            <span class="breadcrumb-separator">›</span>
+            <span id="event-name-breadcrumb">活動詳情</span>
+        </div>
+    </div>
+    
     <!-- 主內容區塊 -->
     <main class="main-content">
         <!-- 活動導航區塊 -->
         <div class="event-navigation">
             <div class="event-back">
-                <a href="#"><span class="arrow-back">‹</span> 2024春季音樂節</a>
+                <a href="#"><span class="arrow-back">‹</span> 活動詳情</a>
             </div>
             <div class="event-tabs">
                 <a href="#info" class="tab-link">活動資訊</a>
@@ -38,38 +47,12 @@
             </div>
         </div>
 
-        <!-- 活動內容 -->
-        <section class="event-header">
-            <img src="https://placehold.co/600x400" alt="2025春季音樂節" class="event-image">
-
-            <div class="event-details">
-                <div class="event-info">
-                    <h1 class="event-title">2025春季音樂節</h1>
-                    <div class="event-meta">
-                        <div><strong>活動日期：</strong>2025/03/15 18:30</div>
-                        <div><strong>地點：</strong>台北市音樂廳戶外廣場</div>
-                        <div><strong>主辦單位：</strong>春季音樂季籌備委員會</div>
-                    </div>
-                    <hr>
-                    <div class="event-description">
-                        <p>2025春季音樂節將帶來前所未有的聽覺盛宴，來自世界各地的音樂人共襄盛舉。</p>
-                    </div>
-                </div>
-
-                <div class="event-booking">
-                    <h3 class="booking-title">票券資訊</h3>
-                    <div class="ticket-option">
-                        <span>VIP票</span>
-                        <span class="ticket-price">NT$ 2,000</span>
-                    </div>
-                    <div class="ticket-option">
-                        <span>一般票</span>
-                        <span class="ticket-price">NT$ 1,500</span>
-                    </div>
-                    <a href="#book-now" class="booking-button">立即購票</a>
-                </div>
+        <!-- Vue 將在這裡渲染活動內容 -->
+        <div id="event-content">
+            <div class="loading">
+                <p>資料載入中...</p>
             </div>
-        </section>
+        </div>
     </main>
 
     <!-- 頁腳 footer -->
@@ -104,6 +87,11 @@
             </div>
         </div>
     </footer>
-</body>
 
+    <!-- Vue 3 核心庫 -->
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.prod.js"></script>
+    
+    <!-- 主應用 JS -->
+    <script type="module" src="./event_ticket_purchase.js"></script>
+</body>
 </html>
