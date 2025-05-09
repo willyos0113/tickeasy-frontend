@@ -8,7 +8,7 @@
 hr {
     border: none;
     border-top: 1px solid #e5e7eb;
-    margin-top: 0.3rem;
+    margin: 1rem 0;
 }
 
 body {
@@ -56,36 +56,6 @@ nav {
     color: white !important;
     padding: 0.5rem 1rem;
     border-radius: 4px;
-}
-
-/* 麵包屑導航樣式 */
-.breadcrumb-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.breadcrumb {
-    display: flex;
-    align-items: center;
-    padding-bottom: 0.5rem;
-}
-
-.breadcrumb a {
-    color: #333;
-    text-decoration: none;
-}
-
-.breadcrumb-icon {
-    margin-right: 0.5rem;
-    color: #ec4899;
-}
-
-.breadcrumb-separator {
-    margin: 0 0.5rem;
-    color: #ccc;
 }
 
 /* 頁腳 footer 樣式 */
@@ -169,7 +139,7 @@ footer {
     color: #111827;
 }
 
-/* 活動頁面內容樣式 */
+/* 活動內容樣式 */
 .event-header {
     position: relative;
     margin-bottom: 2rem;
@@ -199,11 +169,34 @@ footer {
     min-width: 300px;
 }
 
-.event-title {
+.event-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 0.5rem;
+}
+
+.event-title {
     font-size: 1.8rem;
     font-weight: bold;
     color: #111827;
+}
+
+.favorite-button {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+}
+
+.favorite-button.is-favorite {
+    color: #ec4899;
+}
+
+.favorite-button:hover {
+    transform: scale(1.1);
 }
 
 .event-meta {
@@ -216,9 +209,29 @@ footer {
     margin-bottom: 0.3rem;
 }
 
+.event-tag {
+    display: inline-block;
+    background-color: #f3f4f6;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    font-size: 0.75rem;
+}
+
 .event-description {
     margin-top: 1rem;
     font-size: 0.95rem;
+}
+
+.event-description h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.1rem;
+    color: #111827;
+}
+
+.event-description p {
+    margin-bottom: 1rem;
+    white-space: pre-line;
 }
 
 .event-booking {
@@ -241,14 +254,37 @@ footer {
     justify-content: space-between;
     margin-bottom: 0.8rem;
     font-size: 0.95rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .ticket-option:last-child {
-    margin-bottom: 1.5rem;
+    border-bottom: none;
+}
+
+.ticket-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-name {
+    font-weight: 500;
+}
+
+.ticket-remaining {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 0.3rem;
 }
 
 .ticket-price {
     font-weight: bold;
+}
+
+.ticket-sell-period {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin: 1rem 0;
 }
 
 .booking-button {
@@ -263,162 +299,66 @@ footer {
     background-color: #ec4899;
     color: white;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Vue動態生成的內容樣式 */
-.event-page {
-    margin-bottom: 2rem;
+.booking-button:hover {
+    background-color: #db2777;
 }
 
-.event-container {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem;
-    overflow: hidden;
+.booking-button.disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
 }
 
-.event-header {
-    padding: 1.5rem;
-    border-bottom: 1px solid #eee;
-}
-
-.event-category {
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.event-info {
-    padding: 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.info-item {
-    margin-bottom: 1rem;
-}
-
-.info-item .label {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0.25rem;
-}
-
-.info-item .value {
-    font-weight: 500;
-}
-
-.event-content {
-    padding: 1.5rem;
-}
-
-.content-title {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.event-banner {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-}
-
-.section-title {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    font-weight: normal;
-    color: #666;
-}
-
-/* 票券容器樣式 */
-.ticket-container {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-}
-
-.ticket-header {
-    margin-bottom: 1.5rem;
-}
-
-.ticket-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.ticket-list {
-    margin-bottom: 1.5rem;
-}
-
-.ticket-item {
+/* 加載和錯誤樣式 */
+.loading-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
+    justify-content: center;
+    min-height: 300px;
 }
 
-.ticket-item:last-child {
-    border-bottom: none;
+.loading-spinner {
+    border: 4px solid #f3f4f6;
+    border-top: 4px solid #ec4899;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
 }
 
-.ticket-type {
-    font-weight: 500;
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-.ticket-price {
-    color: #ec4899;
-    font-weight: 500;
-}
-
-.purchase-btn {
-    display: block;
-    width: 100%;
-    padding: 0.8rem;
+.error-message {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    padding: 1rem;
+    border-radius: 8px;
     text-align: center;
-    background-color: #ec4899;
+    margin: 2rem 0;
+}
+
+.retry-button {
+    background-color: #b91c1c;
     color: white;
     border: none;
+    padding: 0.5rem 1rem;
     border-radius: 4px;
-    font-weight: 500;
+    margin-top: 1rem;
     cursor: pointer;
-}
-
-.purchase-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
 }
 
 .no-tickets {
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem;
     color: #6b7280;
-}
-
-/* 載入和錯誤提示樣式 */
-.loading, .error {
-    text-align: center;
-    padding: 3rem 0;
-    color: #666;
-}
-
-.error {
-    color: #ec4899;
-}
-
-.retry-btn {
-    margin-top: 1rem;
-    padding: 0.5rem 1.5rem;
-    background-color: #ec4899;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 500;
+    font-style: italic;
 }
 
 /* RWD 響應式設計 */
@@ -433,6 +373,18 @@ footer {
         margin-top: 1rem;
     }
 
+    .event-navigation {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .event-tabs {
+        margin-top: 0.5rem;
+        overflow-x: auto;
+        width: 100%;
+        padding-bottom: 0.5rem;
+    }
+
     .event-details {
         flex-direction: column;
     }
@@ -440,33 +392,24 @@ footer {
     .event-booking {
         margin-left: 0;
         margin-top: 1.5rem;
-    }
-    
-    .event-info {
-        grid-template-columns: 1fr;
-    }
-    
-    .event-navigation {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    
-    .event-tabs {
         width: 100%;
-        overflow-x: auto;
-        padding-bottom: 0.5rem;
+    }
+    
+    .event-image {
+        height: 250px;
     }
 }
 
 @media (max-width: 480px) {
-    .ticket-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+    .event-title {
+        font-size: 1.5rem;
     }
     
-    .ticket-type-availability {
-        align-self: flex-start;
+    .event-image {
+        height: 200px;
+    }
+    
+    .favorite-button {
+        font-size: 1.5rem;
     }
 }

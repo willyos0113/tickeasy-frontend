@@ -1,12 +1,17 @@
 <!doctype html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TickEasy - 探索精彩活動</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./event_ticket_purchase.css">
+    <!-- Vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
+    <!-- is.js 函式庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/is_js/0.9.0/is.min.js"></script>
 </head>
+
 <body>
     <!-- 主導覽列 nav -->
     <nav>
@@ -22,22 +27,12 @@
         </ul>
     </nav>
 
-    <!-- 麵包屑導航 - 這部分保持靜態 -->
-    <div class="breadcrumb-container">
-        <div class="breadcrumb">
-            <i class="fa fa-calendar-o breadcrumb-icon"></i>
-            <a href="/">首頁</a>
-            <span class="breadcrumb-separator">›</span>
-            <span id="event-name-breadcrumb">活動詳情</span>
-        </div>
-    </div>
-    
     <!-- 主內容區塊 -->
     <main class="main-content">
         <!-- 活動導航區塊 -->
         <div class="event-navigation">
             <div class="event-back">
-                <a href="#"><span class="arrow-back">‹</span> 活動詳情</a>
+                <a href="#"><span class="arrow-back">‹</span> 2024春季音樂節</a>
             </div>
             <div class="event-tabs">
                 <a href="#info" class="tab-link">活動資訊</a>
@@ -47,11 +42,76 @@
             </div>
         </div>
 
-        <!-- Vue 將在這裡渲染活動內容 -->
-        <div id="event-content">
-            <div class="loading">
-                <p>資料載入中...</p>
+        <!-- 活動內容 -->
+        <!-- 活動內容 - 使用Vue應用 -->
+        <div id="app">
+            <!-- 讀取中狀態 -->
+            <div v-if="loading" class="loading-container">
+                <div class="loading-spinner"></div>
+                <p>讀取中，請稍候...</p>
             </div>
+
+            <!-- 錯誤訊息 -->
+            <div v-if="error" class="error-message">
+                <p>{{ error }}</p>
+                <button @click="fetchEventData" class="retry-button">重試</button>
+            </div>
+
+            <!-- 活動內容 -->
+            <section v-if="event && !loading" class="event-header">
+                <img :src="eventImageUrl" :alt="event.eventName" class="event-image">
+
+                <div class="event-details">
+                    <div class="event-info">
+                        <div class="event-title-row">
+                            <h1 class="event-title">{{ event.eventName }}</h1>
+                            <button @click="toggleFavorite" class="favorite-button" :class="{ 'is-favorite': event.isFollowed === 1 }">
+                                <span v-if="event.isFollowed === 1">♥</span>
+                                <span v-else>♡</span>
+                            </button>
+                        </div>
+                        <div class="event-meta">
+                            <div><strong>活動日期：</strong>{{ formatDate(event.eventFromDate) }} ~ {{ formatDate(event.eventToDate) }}</div>
+                            <div><strong>地點：</strong>{{ event.place }}</div>
+                            <div><strong>主辦單位：</strong>{{ event.eventHost }}</div>
+                            <div v-if="event.keyword1 || event.keyword2 || event.keyword3"><strong>標籤：</strong>
+                                <span v-if="event.keyword1" class="event-tag">{{ event.keyword1 }}</span>
+                                <span v-if="event.keyword2" class="event-tag">{{ event.keyword2 }}</span>
+                                <span v-if="event.keyword3" class="event-tag">{{ event.keyword3 }}</span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="event-description">
+                            <h3>活動簡介</h3>
+                            <p>{{ event.summary }}</p>
+                            <h3>活動詳情</h3>
+                            <p>{{ event.detail }}</p>
+                        </div>
+                    </div>
+
+                    <div class="event-booking">
+                        <h3 class="booking-title">票券資訊</h3>
+                        <div v-if="ticketTypes.length === 0" class="no-tickets">
+                            目前沒有可售票券
+                        </div>
+                        <div v-else>
+                            <div v-for="ticket in ticketTypes" :key="ticket.typeId" class="ticket-option">
+                                <div class="ticket-info">
+                                    <span class="ticket-name">{{ ticket.categoryName }}</span>
+                                    <span class="ticket-remaining">剩餘: {{ ticket.remainingTickets }} 張</span>
+                                </div>
+                                <span class="ticket-price">NT$ {{ formatPrice(ticket.price) }}</span>
+                            </div>
+                            <div class="ticket-sell-period">
+                                <p>售票期間: {{ formatDateShort(ticketTypes[0].sellFromTime) }} ~ {{ formatDateShort(ticketTypes[0].sellToTime) }}</p>
+                            </div>
+                            <a href="#book-now" class="booking-button" :class="{ 'disabled': !hasAvailableTickets }" @click.prevent="handleBookingClick">
+                                {{ hasAvailableTickets ? '立即購票' : '售票已結束' }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -87,11 +147,8 @@
             </div>
         </div>
     </footer>
-
-    <!-- Vue 3 核心庫 -->
-    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.prod.js"></script>
-    
-    <!-- 主應用 JS -->
-    <script type="module" src="./event_ticket_purchase.js"></script>
+    <!-- 引入自定義JavaScript -->
+    <script src="./event_ticket_purchase.js"></script>
 </body>
+
 </html>
