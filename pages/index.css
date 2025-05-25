@@ -1,0 +1,53 @@
+/* nav 導覽列 */
+nav {
+  & .navbar-brand {
+    & .navbar-item {
+      font-weight: bold;
+      font-size: 30px;
+      color: #ec4899;
+    }
+    & .navbar-burger {
+      color: #ec4899;
+    }
+    & .navbar-burger:hover {
+      background-color: rgba(236, 72, 153, 0.1);
+    }
+  }
+  & .navbar-menu {
+    & .user-enter {
+      display: flex;
+      align-items: center;
+      & .button {
+        background-color: #ec4899;
+        color: white;
+      }
+    }
+  }
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* footer 頁底列 */
+footer {
+  background-color: #1f2937;
+  & .section {
+    & .columns {
+      & .column {
+        & .footer-col {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          /* align-items: center; */
+          & h3 {
+            color: white;
+            margin-bottom: 1rem;
+          }
+          & a {
+            text-decoration: none;
+            color: #9ca3af;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
