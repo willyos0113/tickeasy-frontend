@@ -1,4 +1,4 @@
-/* nav 導覽列 */
+/* nav 導覽列  */
 nav {
   & .navbar-brand {
     & .navbar-item {
@@ -72,7 +72,28 @@ header {
 }
 
 /* section 主內容 */
-
+section.columns {
+  & .card {
+    & .box {
+      box-shadow: none;
+      border: 2px solid #dbdbdb;
+      & .level-item {
+        & .control {
+          input {
+            padding-bottom: 7px;
+          }
+        }
+      }
+    }
+    & .has-text-centered {
+      padding-bottom: 1.5rem;
+      & span {
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
+}
 /* footer 頁底列 */
 footer {
   background-color: #1f2937;
