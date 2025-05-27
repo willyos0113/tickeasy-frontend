@@ -5,22 +5,21 @@ import Topbar from "@components/dashboard/_topbar.astro";
 import Sidenav from "@components/dashboard/_sidenav.astro";
 import Scripts from "@components/_scripts.astro";
 
-const title = "AdminLTE 4 | Layout RTL";
+const title = "AdminLTE 4 | Sidebar Mini";
 const path = "../../../dist";
 const mainPage = "layout";
-const page = "layout-rtl";
-const isRtl = true;
+const page = "sidebar-mini";
 ---
 
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
   <!--begin::Head-->
   <head>
-    <Head title={title} path={path} isRtl={isRtl} />
+    <Head title={title} path={path} />
   </head>
   <!--end::Head-->
   <!--begin::Body-->
-  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+  <body class="layout-fixed sidebar-expand-lg sidebar-mini bg-body-tertiary">
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
       <Topbar path={path} />
@@ -34,13 +33,13 @@ const isRtl = true;
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6">
-                <h3 class="mb-0">Layout RTL</h3>
+                <h3 class="mb-0">Sidebar Mini</h3>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
                   <li class="breadcrumb-item active" aria-current="page">
-                    Layout RTL
+                    Sidebar Mini
                   </li>
                 </ol>
               </div>
@@ -79,7 +78,7 @@ const isRtl = true;
                         title="Remove"
                       >
                         <i class="bi bi-x-lg"></i>
-                      </button>
+                      </a>
                     </div>
                   </div>
                   <div class="card-body">

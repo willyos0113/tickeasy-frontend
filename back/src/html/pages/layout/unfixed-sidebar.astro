@@ -5,10 +5,10 @@ import Topbar from "@components/dashboard/_topbar.astro";
 import Sidenav from "@components/dashboard/_sidenav.astro";
 import Scripts from "@components/_scripts.astro";
 
-const title = "AdminLTE 4 | Sidebar Mini";
+const title = "AdminLTE 4 | Unfixed Sidebar";
 const path = "../../../dist";
 const mainPage = "layout";
-const page = "sidebar-mini";
+const page = "unfixed-sidebar";
 ---
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ const page = "sidebar-mini";
   </head>
   <!--end::Head-->
   <!--begin::Body-->
-  <body class="layout-fixed sidebar-expand-lg sidebar-mini bg-body-tertiary">
+  <body class="sidebar-expand-lg bg-body-tertiary">
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
       <Topbar path={path} />
@@ -33,13 +33,13 @@ const page = "sidebar-mini";
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6">
-                <h3 class="mb-0">Sidebar Mini</h3>
+                <h3 class="mb-0">Unfixed Layout</h3>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
                   <li class="breadcrumb-item active" aria-current="page">
-                    Sidebar Mini
+                    Unfixed Layout
                   </li>
                 </ol>
               </div>
@@ -78,7 +78,7 @@ const page = "sidebar-mini";
                         title="Remove"
                       >
                         <i class="bi bi-x-lg"></i>
-                      </button>
+                      </a>
                     </div>
                   </div>
                   <div class="card-body">
@@ -93,7 +93,6 @@ const page = "sidebar-mini";
             </div>
             <!--end::Row-->
           </div>
-          <!--end::Container-->
         </div>
         <!--end::App Content-->
       </main>
