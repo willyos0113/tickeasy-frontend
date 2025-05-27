@@ -14,3 +14,17 @@ $(".back").on("click", () => {
 $(".next").on("click", () => {
   location.href = "bookStep2.html";
 });
+
+$(".subtract").on("click", (e) => {
+  $(e.target);
+  let count = $(".count").val();
+  if (count > 0) {
+    count--;
+    $(".count").val(count);
+  }
+});
+$(".add").on("click", () => {
+  let count = $(".count").val();
+  count++;
+  $(".count").val(count);
+});
