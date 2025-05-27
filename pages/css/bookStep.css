@@ -59,14 +59,23 @@ header {
       color: #9e9d9d;
       font-weight: bold;
     }
-    & .passed-circle {
+    & .passing-circle {
       background-color: #ec4899;
       & span {
         color: white;
       }
     }
-    & .passed-step {
+    & .passing-step {
       color: #ec4899;
+    }
+    & .passed-circle {
+      background-color: #16982b;
+      & span {
+        color: white;
+      }
+    }
+    & .passed-step {
+      color: #16892b;
     }
   }
 }
