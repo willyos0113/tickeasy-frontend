@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tickeasy!!!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/bookStep2.css" />
+  </head>
+  <body>
+    <!-- nav 導覽列 -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">Tickeasy</a>
+        <!-- 漢堡按鈕 -->
+        <a
+          class="navbar-burger"
+          role="button"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <!-- 橫向導覽列 -->
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item"> 我的訂單 </a>
+          <a class="navbar-item"> 我的關注 </a>
+          <a class="navbar-item"> 我的票券 </a>
+          <a class="navbar-item"> 通知中心 </a>
+          <div class="navbar-item">
+            <button class="button">會員中心</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- header 麵包屑 & 進度條 -->
+    <header>
+      <span class="icon-text">
+        <span class="icon">
+          <i class="fa-solid fa-angle-left"></i>
+        </span>
+        <span class="bread">2024春季音樂節</span>
+      </span>
+      <hr />
+      <div class="columns">
+        <div class="column is-4">
+          <div class="circle passed-circle"><span>1</span></div>
+          <span class="passed-step">選擇票券</span>
+        </div>
+        <div class="column is-4">
+          <div class="circle passed-circle"><span>2</span></div>
+          <span class="passed-step">填寫資料</span>
+        </div>
+        <div class="column is-4">
+          <div class="circle"><span>3</span></div>
+          <span>付款確認</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- section 主內容 -->
+    <!-- <div class="section">
+      <div class="container">
+        <div class="box custom-box">
+          <div class="level is-mobile mb-5">
+            <div class="level-left">
+              <div class="level-item">
+                <span class="ticket-icon-bg has-background-custom-pink-light">
+                  <i class="fas fa-ticket-alt fa-lg has-text-custom-pink"></i>
+                </span>
+                <h2 class="title is-4 mb-0">入場者資料</h2>
+              </div>
+            </div>
+            <div class="level-right is-hidden-touch">
+              <div class="level-item">
+                <a href="#" class="has-text-custom-pink has-text-weight-bold"
+                  >同購票人資料</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="columns is-multiline">
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >帳號<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input class="input" type="text" placeholder="請輸入帳號" />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >電子郵件<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input
+                    class="input"
+                    type="email"
+                    placeholder="請輸入電子郵件"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >姓名<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input class="input" type="text" placeholder="請輸入姓名" />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >手機號碼<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input
+                    class="input"
+                    type="tel"
+                    placeholder="請輸入手機號碼"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >身分證字號<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="請輸入身分證字號"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label">票種</label>
+                <div class="control">
+                  <input class="input" type="text" value="VIP區" readonly />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <section class="columns is-centered mt-5 mb-6">
+      <div class="column is-6">
+        <!-- 入場者填寫表單 -->
+        <div class="box custom-box">
+          <div class="level is-mobile mb-5">
+            <div class="level-left">
+              <div class="level-item">
+                <span class="ticket-icon-bg">
+                  <i
+                    class="fa-solid fa-2x fa-ticket has-text-danger fa-rotate-by"
+                    style="--fa-rotate-angle: -45deg"
+                  ></i>
+                </span>
+                <h2 class="title is-4 mb-0 mx-2">入場者資料</h2>
+              </div>
+            </div>
+            <div class="level-right is-hidden-touch">
+              <div class="level-item">
+                <a href="#" class="has-text-custom-pink has-text-weight-bold"
+                  >同購票人資料</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="columns is-multiline">
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >帳號<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input class="input" type="text" placeholder="請輸入帳號" />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >電子郵件<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input
+                    class="input"
+                    type="email"
+                    placeholder="請輸入電子郵件"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >姓名<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input class="input" type="text" placeholder="請輸入姓名" />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >手機號碼<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input
+                    class="input"
+                    type="tel"
+                    placeholder="請輸入手機號碼"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >身分證字號<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="請輸入身分證字號"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label">票種</label>
+                <div class="control">
+                  <input class="input" type="text" value="VIP區" readonly />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 入場者填寫表單 -->
+        <div class="box custom-box">
+          <div class="level is-mobile mb-5">
+            <div class="level-left">
+              <div class="level-item">
+                <span class="ticket-icon-bg">
+                  <i
+                    class="fa-solid fa-2x fa-ticket has-text-danger fa-rotate-by"
+                    style="--fa-rotate-angle: -45deg"
+                  ></i>
+                </span>
+                <h2 class="title is-4 mb-0 mx-2">入場者資料</h2>
+              </div>
+            </div>
+            <div class="level-right is-hidden-touch">
+              <div class="level-item">
+                <a href="#" class="has-text-custom-pink has-text-weight-bold"
+                  >同購票人資料</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="columns is-multiline">
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >帳號<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input class="input" type="text" placeholder="請輸入帳號" />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >電子郵件<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input
+                    class="input"
+                    type="email"
+                    placeholder="請輸入電子郵件"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >姓名<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input class="input" type="text" placeholder="請輸入姓名" />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >手機號碼<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input
+                    class="input"
+                    type="tel"
+                    placeholder="請輸入手機號碼"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label"
+                  >身分證字號<span class="has-text-danger">*</span></label
+                >
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="請輸入身分證字號"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label">票種</label>
+                <div class="control">
+                  <input class="input" type="text" value="VIP區" readonly />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 下一步按鈕區塊 -->
+        <div class="buttons is-flex is-justify-content-space-between">
+          <button class="button back">返回</button>
+          <button class="button is-danger next" style="color: white">
+            下一步
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer 頁底列 -->
+    <footer>
+      <div class="section">
+        <div class="columns">
+          <div class="column is-3">
+            <div class="footer-col">
+              <h3>關於我們</h3>
+              <a href="#">票務通致力於提供最優質的票務服務</a>
+            </div>
+          </div>
+          <div class="column is-3">
+            <div class="footer-col">
+              <h3>客戶服務</h3>
+              <a href="#">常見問題</a>
+              <a href="#">聯絡我們</a>
+            </div>
+          </div>
+          <div class="column is-3">
+            <div class="footer-col">
+              <h3>售票須知</h3>
+              <a href="#">購票說明</a>
+              <a href="#">退票政策</a>
+            </div>
+          </div>
+          <div class="column is-3">
+            <div class="footer-col">
+              <h3>追蹤我們</h3>
+              <a href="#">Facebook</a>
+              <a href="#">Intagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./js/bookStep2.js"></script>
+</html>
