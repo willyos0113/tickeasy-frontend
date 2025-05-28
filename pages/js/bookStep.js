@@ -1,10 +1,8 @@
-import { navLogic } from "./includes/nav.js";
-
 // nav 導覽列
 fetch("./includes/nav.html")
   .then((resp) => resp.text())
-  .then((navContent) => {
-    $(".navbar").append(navContent);
+  .then((navHTML) => {
+    $(".navbar").append(navHTML);
     navLogic();
   });
 
