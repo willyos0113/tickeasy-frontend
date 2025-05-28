@@ -13,6 +13,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <link rel="stylesheet" href="./css/bookStep.css" class="main-css" />
+    <link rel="stylesheet" href="./components/nav/nav.css" />
+    <link rel="stylesheet" href="./components/footer/footer.css" />
   </head>
   <body>
     <!-- nav 導覽列 -->
@@ -58,7 +60,7 @@
                 <p class="title is-4">票券一覽</p>
               </div>
             </div>
-            <!-- 票種欄 -->
+            <!-- 票種區塊 -->
             <div class="type-container"></div>
           </div>
           <div class="has-text-centered">
@@ -68,7 +70,7 @@
             </button>
           </div>
         </div>
-        <!-- 下一步按鈕區塊 -->
+        <!-- 上/下一步按鈕區塊 -->
         <div class="buttons is-flex is-justify-content-space-between">
           <button class="button back">返回</button>
           <button class="button is-danger next" style="color: white">
@@ -83,5 +85,7 @@
   </body>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="./js/bookStep.js" class="main-script"></script>
+  <script src="./js/bookStep.js"></script>
+  <script src="./components/nav/nav.js"></script>
+  <script src="./components/footer/footer.js"></script>
 </html>
