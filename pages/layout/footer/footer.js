@@ -1,6 +1,6 @@
 // ====== footer 頁底列 ======
 const footerHTMLLoader = async () => {
-  const resp = await fetch("./components/footer/footer.html");
+  const resp = await fetch("./layout/footer/footer.html");
   const footerHTML = await resp.text();
   $("footer").append(footerHTML);
 };

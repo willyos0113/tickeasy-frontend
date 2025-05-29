@@ -1,6 +1,6 @@
 // ====== nav 導覽列 ======
 const navHTMLLoader = async () => {
-  const resp = await fetch("./components/nav/nav.html");
+  const resp = await fetch("./layout/nav/nav.html");
   const navHTML = await resp.text();
   $(".navbar").append(navHTML);
 };
